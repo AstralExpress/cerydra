@@ -1,0 +1,7 @@
+plugins:
+  cyrene:
+    url: https://github.com/AstralExpress/cyrene.git
+    branch: main
+  herta:
+    url: https://github.com/AstralExpress/herta.git
+    branch: main

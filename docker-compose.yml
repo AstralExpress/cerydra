@@ -1,0 +1,17 @@
+services:
+  cerydra:
+    build: ./cerydra  # build context is now ./cerydra
+    container_name: cerydra
+    volumes:
+      # Mount code for development
+      - ./cerydra/app:/code/app
+      - ./cerydra/core:/code/core
+      - ./plugins:/plugins
+      - ./config.yml:/config.yml
+      - ./.env:/.env
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - ./.env
+    environment:
+      - PLUGINS_DIR=/plugins
+      - CONFIG_PATH=/config.yml
