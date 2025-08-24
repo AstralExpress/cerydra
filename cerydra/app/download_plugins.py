@@ -3,10 +3,8 @@ from pathlib import Path
 
 import yaml
 
-from core import logger
 
-
-def clone_or_update_plugin(repo_url: str, branch: str, target_dir: Path, github_token: str):
+def clone_or_update_plugin(repo_url: str, branch: str, target_dir: Path, github_token: str, logger):
     """Clone a repo if it doesn't exist; pull latest if it does."""
 
     if target_dir.exists():
@@ -20,7 +18,7 @@ def clone_or_update_plugin(repo_url: str, branch: str, target_dir: Path, github_
         subprocess.run(["git", "clone", "--branch", branch, repo_url, str(target_dir)], check=True)
 
 
-def load_plugins(config_path, plugins_dir, github_token):
+def download_plugins(config_path, plugins_dir, github_token, logger):
     plugins_dir.mkdir(exist_ok=True)
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
@@ -31,6 +29,6 @@ def load_plugins(config_path, plugins_dir, github_token):
         url = plugin["url"]
         branch = plugin["branch"]
         target = plugins_dir / name
-        clone_or_update_plugin(url, branch, target, github_token)
+        clone_or_update_plugin(url, branch, target, github_token, logger)
 
-    logger.log("All plugins successfully loaded!")
+    logger.log("All plugins successfully downloaded!")

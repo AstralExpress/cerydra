@@ -1,6 +1,6 @@
 services:
   cerydra:
-    build: ./cerydra  # build context is now ./cerydra
+    build: ./cerydra
     container_name: cerydra
     volumes:
       # Mount code for development
