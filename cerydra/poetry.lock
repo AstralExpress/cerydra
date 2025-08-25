@@ -15,9 +15,9 @@ pluggy = ">=1.6.0,<2.0.0"
 
 [package.source]
 type = "git"
-url = "https://github.com/AstralExpress/imperium.git"
-reference = "main"
-resolved_reference = "8039ac95d262c67563340f2da43d239e46994584"
+url = "https://github.com/AstralExpress/imperium"
+reference = "HEAD"
+resolved_reference = "1ea2237ca05e9ccf459922c262647aa8a74e8b43"
 
 [[package]]
 name = "pluggy"
@@ -116,4 +116,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "47e659c67956ca361c6ed4f503e30e7dabbbcfb6e293926a072ce1841999eb37"
+content-hash = "3e932e54a67bce05352047efc74510004fe9b1c6df9bcd5ac59e2dd3ae1bcb9b"

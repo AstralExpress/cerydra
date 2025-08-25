@@ -15,7 +15,7 @@ class PathstriderOrchestrator:
 
     def register_plugin(self, plugin_module):
         self.pm.register(plugin_module)
-        messages = self.pm.hook.hello(message="I'm glad to see you here.")
+        messages = self.pm.hook.init_plugin(logger=self.logger)
         for m in messages:
             self.logger.log(m)
 
